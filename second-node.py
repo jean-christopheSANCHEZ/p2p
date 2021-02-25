@@ -7,14 +7,14 @@ async def run():
     loop_s2.set_debug(True)
 
     node2 = Server()
-    loop_s2.run_until_complete(node2.listen(8480))
+    loop_s2.run_until_complete(node2.listen(5002))
 
     
 
     # Bootstrap the node by connecting to other known nodes, in this case
     # replace 123.123.123.123 with the IP of another node and optionally
     # give as many ip/port combos as you can for other nodes.
-    await node2.bootstrap([("0.0.0.0", 8468)])
+    await node2.bootstrap([("0.0.0.0", 5000)])
     #await node.bootstrap([("0.0.0.0", 8478)])
 
     # set a value for the key "my-key" on the network
@@ -31,5 +31,3 @@ async def run():
     finally:
         server.stop()
         loop_s2.close()
-
-asyncio.run(run())

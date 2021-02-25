@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="script_get_set.js"></script>
+    <title>GET AND SET</title>
+  </head>
+  <body>
+    <h2>GET</h2>
+
+		<form action="" onsubmit="get()">
+  			<label for="get_ip">IP for bootstrap</label><br>
+  			<input type="text" id="get_ip" name="get_ip" value=""><br>
+  			<label for="get_port">PORT for bootstrap</label><br>
+  			<input type="text" id="get_port" name="get_port" value=""><br><br>
+			<label for="get_key">KEY of the value</label><br>
+  			<input type="text" id="get_key" name="get_key" value=""><br><br>
+  			<input type="submit" value="Submit">
+		</form>
+
+
+
+
+	<h2>SET</h2>
+
+		<form action="" onsubmit="set()">
+  			<label for="set_ip">IP for bootstrap</label><br>
+  			<input type="text" id="set_ip" name="set_ip" value=""><br>
+  			<label for="set_port">PORT for bootstrap</label><br>
+  			<input type="text" id="set_port" name="set_port" value=""><br><br>
+			<label for="set_key">KEY of the value</label><br>
+  			<input type="text" id="set_key" name="set_key" value=""><br><br>
+			<label for="set_value">Value</label><br>
+  			<input type="text" id="set_value" name="set_value" value=""><br><br>
+  			<input type="submit" value="Submit">
+		</form>
+
+	<script src="script_get_set.js"></script>
+  </body>
+</html>

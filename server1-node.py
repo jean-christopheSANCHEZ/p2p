@@ -2,6 +2,7 @@ import logging
 import asyncio
 
 from kademlia.network import Server
+import kademlia
 
 handler = logging.StreamHandler()
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -15,6 +16,7 @@ loop_s1 = asyncio.get_event_loop()
 loop_s1.set_debug(True)
 server = Server()
 loop_s1.run_until_complete(server.listen(5000))
+#print(server.storage.__getitem__(1))
 
 
 try:

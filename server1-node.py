@@ -1,6 +1,6 @@
 import logging
 import asyncio
-
+import permanent
 from kademlia.network import Server
 import kademlia
 
@@ -14,9 +14,8 @@ log.setLevel(logging.DEBUG)
 
 loop_s1 = asyncio.get_event_loop()
 loop_s1.set_debug(True)
-server = Server()
+server = Server(storage=permanent.PermanentStorage())
 loop_s1.run_until_complete(server.listen(5000))
-#print(server.storage.__getitem__(1))
 
 
 try:

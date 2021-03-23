@@ -14,7 +14,9 @@ class PermanentStorage(IStorage):
         self.data = OrderedDict()
         self.ttl = ttl
         try : 
-            
+            """
+			Saving in a file, on a line : time key value
+			"""
             f = open("db", "rb")
             try:
                 while True:

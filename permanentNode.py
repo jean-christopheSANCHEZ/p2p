@@ -13,7 +13,7 @@ finally:
 
 parse = line.split();
 #launch servers
-processServer1 = subprocess.Popen(["python3", "server1-node.py", parse[0], parse[1]])
-processServer2 = subprocess.Popen(["python3", "server2-node.py", parse[2], parse[3], parse[0], parse[1]])
-processServer3 = subprocess.Popen(["python3", "server3-node.py", parse[4], parse[5], parse[0], parse[1]])
+processServer1 = subprocess.Popen(["python3", "server1-node.py", parse[0], parse[1], parse[2]])
+processServer2 = subprocess.Popen(["python3", "server2-node.py", parse[3], parse[4], parse[0], parse[1], parse[5]])
+processServer3 = subprocess.Popen(["python3", "server3-node.py", parse[6], parse[7], parse[0], parse[1], parse[8]])
 

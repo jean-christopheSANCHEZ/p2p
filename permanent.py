@@ -7,18 +7,21 @@ from collections import OrderedDict
 from abc import abstractmethod, ABC
 
 class PermanentStorage(IStorage):
+    pathDBfile=""
+
     def __init__(self,dbFilePath,ttl=604800):
         """
         By default, max age is a week.
         """
         self.data = OrderedDict()
         self.ttl = ttl
+        self.pathDBfile = dbFilePath
         try : 
             """
 			Saving in a file, on a line : time key value
 			"""
             f = open(dbFilePath, "rb")
-            print("opening file " + dbFilePath)
+            print("opening file " + dbFilePath + " to read the permanent data")
             try:
                 while True:
                     l = pickle.load(f)
@@ -36,7 +39,8 @@ class PermanentStorage(IStorage):
         if key in self.data:
             del self.data[key]
         t = time.monotonic()
-        f = open("dbServer1", "ab")
+        f = open(self.pathDBfile, "ab")
+        print("opening file " + self.pathDBfile + " to add the permanent data")
         pickle.dump((t,key, value),f)
         f.close()
         self.data[key] = (t, value)
